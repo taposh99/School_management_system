@@ -11,7 +11,7 @@
             <div class="card-body">
                 <div class="border p-4 rounded">
                     <div class="card-title d-flex align-items-center">
-                        <h5 class="mb-0">Teacher Registration Form</h5><br>
+                        <h5 class="mb-0">Teacher Registration add</h5><br>
                         <h6>{{ session('message') }}</h6>
                     </div>
                     <hr/>
