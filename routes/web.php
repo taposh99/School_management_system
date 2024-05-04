@@ -40,15 +40,17 @@ Route::group(['middleware'=>'teacher'],function (){
     Route::get('/manage-course',[CourseController::class,'manageCourse'])->name('manage-course');
     Route::post('/new-course',[CourseController::class,'saveCourse'])->name('new-course');
 
+    Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
+    Route::get('/add-teacher',[TeacherController::class,'index'])->name('add-teacher');
+    Route::get('/manage-teacher',[TeacherController::class,'manageTeacher'])->name('manage-teacher');
+    Route::post('/new-teacher',[TeacherController::class,'saveTeacher'])->name('new-teacher');
+    Route::post('/teacher-delete',[TeacherController::class,'deleteTeacher'])->name('teacher-delete');
+
 });
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
 //    Route::get('/dashboard', function () {
 //        return view('dashboard');
 //    })->name('dashboard');
-    Route::get('/dashboard',[AdminController::class,'index'])->name('dashboard');
-    Route::get('/add-teacher',[TeacherController::class,'index'])->name('add-teacher');
-    Route::get('/manage-teacher',[TeacherController::class,'manageTeacher'])->name('manage-teacher');
-    Route::post('/new-teacher',[TeacherController::class,'saveTeacher'])->name('new-teacher');
-    Route::post('/teacher-delete',[TeacherController::class,'deleteTeacher'])->name('teacher-delete');
+
 });
